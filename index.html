@@ -487,5 +487,43 @@ document.querySelectorAll("form[data-netlify]").forEach(f=>f.addEventListener("s
 const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("on")),{threshold:.12});
 document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 </script>
+<script>
+(function(){
+  var P=new URLSearchParams(location.search);
+  var n=(P.get("num")||"").replace(/\D/g,"");
+  window.__vrNum=(n.length>=10&&n.length<=15)?n:null;
+  var DEFAULT="556282885665";
+  function alvo(){return window.__vrNum||DEFAULT;}
+  function bindLinks(){
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
+      var u=a.getAttribute("href")||"";var t=u.match(/[?&]text=([^&]*)/);
+      a.setAttribute("href","https://wa.me/"+alvo()+(t?"?text="+t[1]:""));
+    });
+  }
+  var f=document.querySelector('form[name="cadastro-motorista"]');
+  if(f){f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var d=new FormData(f);
+    if(d.get("bot")){location.href="obrigado.html";return;}
+    var proto=d.get("form-name")==="cadastro-motorista"?"VR-2026-"+Math.floor(100000+Math.random()*899999):"";
+    proto="VR-2026-"+Math.floor(100000+Math.random()*899999);
+    try{sessionStorage.setItem("proto",proto);}catch(err){}
+    var msg="Ol\u00e1! Acabei de me candidatar pelo site de vagas.\n\n"+
+      "Nome: "+(d.get("nome")||"")+"\n"+
+      "Celular: "+(d.get("celular")||"")+"\n"+
+      (d.get("email")?"E-mail: "+d.get("email")+"\n":"")+
+      "Cidade: "+(d.get("cidade")||"")+"\n"+
+      "CNH: "+(d.get("categoria")||"")+" - "+(d.get("situacao_cnh")||"")+(d.get("cpf_regular")?" - CPF regular":"")+"\n"+
+      "Habilita\u00e7\u00e3o desde: "+(d.get("tempo")||"")+"\n"+
+      "Experi\u00eancia: "+(d.get("experiencia")||"")+"\n"+
+      (d.get("obs")?"Obs: "+d.get("obs")+"\n":"")+
+      "Protocolo: "+proto;
+    var url="https://wa.me/"+alvo()+"?text="+encodeURIComponent(msg);
+    var w=window.open(url,"_blank","noopener");
+    setTimeout(function(){location.href="obrigado.html";},700);
+  });}
+  if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",bindLinks);}else{bindLinks();}
+})();
+</script>
 </body>
 </html>
