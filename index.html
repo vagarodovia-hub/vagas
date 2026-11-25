@@ -64,7 +64,7 @@ body{font-family:'Outfit',system-ui,-apple-system,sans-serif;background:var(--bg
 .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;list-style:none}
 .chips li{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:9px 15px;border-radius:999px;font-size:.88rem;font-weight:500;color:#dfe6f2}
 .ticker{margin-top:22px;border:1px dashed rgba(245,184,65,.35);background:rgba(58,213,137,.05);border-radius:12px;padding:11px 15px;font-size:.9rem;color:#cfe8d9;min-height:20px}
-.ticker b{color:#fff}
+.ticker b{color:#fff}.ticker .t-ava{display:inline-block;width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid rgba(245,184,65,.65);vertical-align:-8px;margin-right:7px}.ticker .t-init{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#1b2536;border:2px solid rgba(255,255,255,.14);font-size:.55rem;font-weight:800;color:#9aa8bd;letter-spacing:.02em;vertical-align:-8px;margin-right:7px}
 .sec{padding:78px 0}
 .sec.alt{background:var(--bg2)}
 .overline{color:var(--gold);font-weight:700;letter-spacing:.22em;font-size:.78rem;margin-bottom:12px}
@@ -631,8 +631,8 @@ setInterval(()=>{if(slots>9&&Math.random()<.6){slots--;sl.textContent=slots;}},4
 const target=Date.parse("2026-11-30T23:59:59-03:00");const p2=n=>String(n).padStart(2,"0");
 function tick(){let d=Math.max(0,target-Date.now());document.getElementById("cd").textContent=p2(Math.floor(d/864e5))+"d "+p2(Math.floor(d/36e5)%24)+"h "+p2(Math.floor(d/6e4)%60)+"m "+p2(Math.floor(d/1e3)%60)+"s";}
 tick();setInterval(tick,1000);
-const feed=[["João Pedro","Belo Horizonte/MG","E"],["Carlos Andrade","Sorocaba/SP","D"],["Marcos Lima","Goiânia/GO","E"],["Rafael Souza","Fortaleza/CE","C"],["Antônio Ferreira","Recife/PE","D"],["Diego Martins","Canoas/RS","E"],["Edson Alves","Palmas/TO","C"],["Wesley Rocha","Belém/PA","D"],["Fernando Costa","Uberlândia/MG","C"],["Luís Henrique","Juiz de Fora/MG","E"]];
-function next(){const f=feed[Math.floor(Math.random()*feed.length)];document.getElementById("ticker").innerHTML="<span>🟢</span> <b>"+f[0]+"</b> ("+f[1]+") — CNH "+f[2]+" garantiu vaga há "+(2+Math.floor(Math.random()*25))+" min";}
+const feed=[["João Pedro","Belo Horizonte/MG","E","f:fotos/m1.jpg"],["Carlos Andrade","Sorocaba/SP","D","C·A"],["Marcos Lima","Goiânia/GO","E","f:fotos/m2.jpg"],["Rafael Souza","Fortaleza/CE","C","R·S"],["Antônio Ferreira","Recife/PE","D","A·F"],["Diego Martins","Canoas/RS","E","D·M"],["Edson Alves","Palmas/TO","C","E·A"],["Wesley Rocha","Belém/PA","D","W·R"],["Fernando Costa","Uberlândia/MG","C","F·C"],["Luís Henrique","Juiz de Fora/MG","E","L·H"]];
+function next(){const f=feed[Math.floor(Math.random()*feed.length)];const ava=f[3].indexOf("f:")===0?'<img class="t-ava" src="'+f[3].slice(2)+'" alt="">':'<span class="t-init">'+f[3]+'</span>';document.getElementById("ticker").innerHTML=ava+'<span>🟢</span> <b>'+f[0]+'</b> ('+f[1]+') — CNH '+f[2]+' garantiu vaga há '+(2+Math.floor(Math.random()*25))+' min';}
 next();setInterval(next,8000);
 document.querySelectorAll("form[data-netlify]").forEach(f=>f.addEventListener("submit",()=>{sessionStorage.setItem("proto",(f.dataset.proto||"VR-2026-")+String(Math.floor(100000+Math.random()*899999)));}));
 const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("on")),{threshold:.12});
