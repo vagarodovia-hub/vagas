@@ -171,6 +171,13 @@ footer{border-top:1px solid var(--line);padding:48px 0 96px;background:#070b11}
 img{max-width:100%}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
 .reveal.on{opacity:1;transform:none}
+
+.cat-row{display:flex;flex-wrap:wrap;gap:12px;margin:-4px 0 10px}
+.cat{display:flex;align-items:center;gap:11px;border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:14px;padding:8px 18px 8px 8px}
+.cat b{width:38px;height:38px;border-radius:9px;display:grid;place-items:center;font-weight:800;font-size:1.05rem;color:#12233d;background:linear-gradient(180deg,#eef3fa,#c9d6ea);border:1px solid #9fb2cc;flex:none}
+.cat small{font-size:.86rem;font-weight:600;color:#dfe6f2;letter-spacing:.02em}
+@media(max-width:560px){.cat{padding:7px 14px 7px 7px}.cat small{font-size:.78rem}}
+
 </style>
 </head>
 <body>
@@ -187,7 +194,12 @@ img{max-width:100%}
 <section class="hero">
   <div class="wrap">
     <span class="pill">✦ Seleção direta — sem intermediário, sem taxa</span>
-    <h1>ATÉ <span class="gold">R$ 14.800</span> POR MÊS.<br>SÓ PRECISAMOS DA SUA <span class="gold">CNH C, D OU E</span>.</h1>
+    <h1>ATÉ <span class="gold">R$ 14.800</span> POR MÊS.<br>CATEGORIAS DISPONÍVEIS PARA CONTRATAÇÃO</h1>
+    <div class="cat-row">
+      <span class="cat"><b>C</b><small>Bitrem · carga seca</small></span>
+      <span class="cat"><b>D</b><small>Ônibus · fretamento</small></span>
+      <span class="cat"><b>E</b><small>Combinação pesada</small></span>
+    </div>
     <p class="sub">Vagas reais de motorista, contrato CLT assinado <b>antes</b> do primeiro dia de estrada. Sem taxa, sem furada, sem letra miúda.</p>
     <div class="cta-row">
       <a class="btn btn-gold lg" href="#cadastro">GARANTIR MINHA VAGA AGORA →</a>
