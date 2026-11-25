@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Exemplo — Foto do contratado no aviso | Vaga Rodovia</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Outfit',system-ui,sans-serif;background:#0a0e15;color:#eef2f8;line-height:1.55;padding:36px 20px 60px}
+.wrap{max-width:720px;margin:0 auto}
+h1{font-size:1.5rem;font-weight:800;margin-bottom:10px}
+.lead{color:#9aa8bd;font-size:.98rem;max-width:620px}
+.lbl{display:flex;align-items:center;gap:10px;margin:30px 0 12px;color:#f5b841;font-weight:700;font-size:.78rem;letter-spacing:.22em}
+.lbl::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.09)}
+.note{color:#9aa8bd;font-size:.86rem;margin-top:14px;max-width:600px}
+.note b{color:#eef2f8}
+.ticker{border:1px dashed rgba(245,184,65,.35);background:rgba(58,213,137,.05);border-radius:12px;padding:11px 15px;font-size:.9rem;color:#cfe8d9;margin-bottom:10px}
+.ticker b{color:#fff}
+.t-ava{display:inline-block;width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid rgba(245,184,65,.65);vertical-align:-9px;margin-right:8px}
+.t-init{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#1b2536;border:2px solid rgba(255,255,255,.14);font-size:.6rem;font-weight:800;color:#9aa8bd;letter-spacing:.04em;vertical-align:-9px;margin-right:8px}
+@keyframes swapflash{0%{background:rgba(58,213,137,.2)}100%{background:rgba(58,213,137,.05)}}
+.ticker.swap{animation:swapflash .9s}
+.back{display:inline-block;margin-top:30px;color:#ffd97a;font-weight:600;text-decoration:none;border-bottom:1px dashed rgba(245,184,65,.5)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>EXEMPLO · FOTO DO CONTRATADO NO AVISO</h1>
+  <p class="lead">Layout <b>idêntico</b> ao do site hoje — a única mudança é o círculo com o retrato entrando à frente do nome, e ele troca junto com cada novo contratado no rodízio.</p>
+
+  <div class="lbl">COMO ESTÁ AGORA (SEM FOTO)</div>
+  <div class="ticker"><span>🟢</span> <b>Rafael Souza</b> (Fortaleza/CE) — CNH C garantiu vaga há 12 min</div>
+
+  <div class="lbl">COMO FICARIA (MESMO LAYOUT + FOTO)</div>
+  <div class="ticker"><img class="t-ava" src="fotos/m1.jpg" alt="João Pedro"> <span>🟢</span> <b>João Pedro</b> (Belo Horizonte/MG) — CNH E garantiu vaga há 7 min</div>
+  <div class="ticker"><span class="t-init">R·S</span> <span>🟢</span> <b>Rafael Souza</b> (Fortaleza/CE) — CNH C garantiu vaga há 23 min</div>
+  <div class="ticker"><span class="t-init">A·F</span> <span>🟢</span> <b>Antônio Ferreira</b> (Recife/PE) — CNH D garantiu vaga há 31 min</div>
+  <p class="note">O retrato da primeira linha já está pronto. As duas linhas de baixo mostram o <b>espaço exato</b> que a foto de cada motorista vai ocupar quando tiver o conjunto completo de rostos — ou fotos reais autorizadas dos seus contratados (se você mandar, uso elas no lugar; fica ainda mais forte).</p>
+
+  <div class="lbl">SIMULAÇÃO DO RODÍZIO (COMO VAI FUNCIONAR NO SITE)</div>
+  <div class="ticker" id="sim"></div>
+  <p class="note">O aviso atualiza sozinho a cada poucos segundos, como já faz hoje — só que agora <b>a foto troca junto com o nome</b>.</p>
+
+  <a class="back" href="./">← Voltar para o site de vagas</a>
+</div>
+<script>
+var feed=[["João Pedro","Belo Horizonte/MG","E"],["Rafael Souza","Fortaleza/CE","C"],["Antônio Ferreira","Recife/PE","D"],["Diego Martins","Canoas/RS","E"],["Fernando Costa","Uberlândia/MG","C"]];
+var el=document.getElementById("sim"),i=0;
+function draw(){
+  var f=feed[i%feed.length];
+  el.innerHTML='<img class="t-ava" src="fotos/m1.jpg" alt=""> <span>🟢</span> <b>'+f[0]+'</b> ('+f[1]+') — CNH '+f[2]+' garantiu vaga há '+(2+Math.floor(Math.random()*25))+' min';
+  el.classList.remove("swap");void el.offsetWidth;el.classList.add("swap");
+  i++;
+}
+draw();setInterval(draw,5000);
+</script>
+</body>
+</html>
