@@ -36,7 +36,11 @@ a.link{color:#ffd97a;font-weight:600}
     <li>Entrevista rápida de 10 minutos e <b>assinar o contrato</b> antes da primeira rota.</li>
   </ol>
   <a class="btn" href="https://wa.me/556282885665?text=Fiz%20meu%20cadastro%20no%20site!%20Meu%20protocolo%20%C3%A9:%20">ACELERAR CHAMANDO NO WHATSAPP →</a>
-  <a class="back" href="/">← Voltar para a página de vagas</a>
+  <div style="margin-top:24px;padding:18px 20px;background:rgba(255,255,255,.03);border:1px dashed rgba(245,184,65,.4);border-radius:14px">
+    <p style="margin-bottom:12px">📲 Conhece outro motorista que precisa disso? Manda o link agora — leva 10 segundos:</p>
+    <a class="btn" style="font-size:.9rem;padding:12px 22px;margin-top:0" target="_blank" rel="noopener" href="'+SHARE_URL+'">COMPARTILHAR NOS GRUPOS DO WHATSAPP</a>
+  </div>
+  <a class="back" href="./">← Voltar para a página de vagas</a>
   <p style="margin-top:14px;font-size:.82rem">Não recebeu contato em 48h úteis? <a class="link" href="https://wa.me/556282885665">Chama a gente com seu protocolo.</a></p>
 </div>
 <script>
@@ -49,7 +53,9 @@ if(p){el.textContent=p}else{setTimeout(()=>el.textContent="VR-2026-"+String(Math
   var n=(P.get("num")||"").replace(/\D/g,"");
   if(n.length<10||n.length>15)return;
   document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
-    var u=a.getAttribute("href")||"";var t=u.match(/[?&]text=([^&]*)/);
+    var u=a.getAttribute("href")||"";
+    if(u.indexOf("https://wa.me/?")===0){return;}
+    var t=u.match(/[?&]text=([^&]*)/);
     a.setAttribute("href","https://wa.me/"+n+(t?"?text="+t[1]:""));
   });
 })();
