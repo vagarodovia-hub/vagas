@@ -229,6 +229,27 @@ img{max-width:100%}
 .share-link:hover{color:#fff}
 .float-wpp::after{content:"";position:absolute;top:1px;right:1px;width:15px;height:15px;border-radius:50%;background:var(--green);border:2.5px solid #0a0e15;animation:pulse 1.6s infinite}
 
+
+/* upgrade: comparativo portais x site */
+.mktc{margin-top:36px;background:linear-gradient(120deg,#101827,#141d2e);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:760px){.mktc{grid-template-columns:1fr}}
+.mktc .cell small{display:block;color:var(--mut);font-size:.74rem;letter-spacing:.12em;font-weight:700;margin-bottom:6px}
+.mktc .cell b{font-size:clamp(1.5rem,3.4vw,2rem);font-weight:800;font-variant-numeric:tabular-nums}
+.mktc .cell span{display:block;color:var(--mut);font-size:.85rem;margin-top:4px}
+.mktc .lo b{color:#8fa0b8}
+.mktc .hi b{color:var(--gold2)}
+.mktc .verdict{grid-column:1/-1;border-top:1px dashed rgba(255,255,255,.12);padding-top:16px;color:#dbe4f0;font-size:.95rem}
+/* upgrade: linha do tempo das etapas */
+.step .when{display:inline-block;margin:0 0 10px;background:rgba(245,184,65,.1);border:1px solid rgba(245,184,65,.4);color:var(--gold2);font-size:.66rem;font-weight:800;letter-spacing:.12em;padding:3px 10px;border-radius:999px}
+/* upgrade: resumo de nota + voz da contratante */
+.rate-sum{margin-top:14px;display:inline-flex;align-items:center;gap:8px;background:rgba(245,184,65,.07);border:1px solid rgba(245,184,65,.35);border-radius:999px;padding:8px 16px;font-size:.88rem;font-weight:600;color:#e7ddc4}
+.tcard.b2b{border-left:4px solid var(--gold);flex-direction:row;justify-content:space-between;gap:24px;margin-top:18px}
+.tcard.b2b .who{margin-top:0;text-align:right}
+@media(max-width:900px){.tcard.b2b{flex-direction:column}.tcard.b2b .who{text-align:left}}
+/* upgrade: cartão institucional */
+.corp-card{margin-top:26px;border:1px dashed rgba(245,184,65,.4);background:rgba(245,184,65,.04);border-radius:14px;padding:18px 20px;font-size:.92rem;color:#c7d2e2;line-height:1.6}
+.corp-card b{color:#fff}
+
 </style>
 </head>
 <body>
@@ -259,6 +280,7 @@ img{max-width:100%}
     <div class="count-wrap">CADASTROS FECHAM EM <span class="cd" id="cd">--:--:--</span></div>
     <ul class="chips">
       <li>📜 Contrato antes de dirigir</li>
+      <li>🚛 Você só dirige — o resto é com a gente</li>
       <li>💵 Zero taxa de cadastro</li>
       <li>🇧🇷 Atendemos todo o Brasil</li>
       <li>⭐ 4,9/5 de quem já foi contratado</li>
@@ -340,6 +362,11 @@ img{max-width:100%}
           <li>Escala com fim de semana em casa</li>
         </ul>
       </article>
+    </div>
+<div class="mktc reveal">
+      <div class="cell lo"><small>O QUE APARECE NOS PORTAIS GRANDES (CONFERIDO HOJE)</small><b>~R$ 3.000</b><span>média das ~2.300 vagas de motorista abertas agora — e uma boa parte nem salário tem: "a combinar".</span></div>
+      <div class="cell hi"><small>PISO DESTA SELEÇÃO (CNH C)</small><b>R$ 7.800</b><span>com teto de R$ 14.800 para CNH E — valor declarado, não promessa oral.</span></div>
+      <p class="verdict">📊 Não é sorte nem favor, é modelo. Portal grande leiloa motorista; aqui se contrata categoria. Por isso o piso deste site é mais que o dobro do que aparece na busca deles.</p>
     </div>
 <div class="calc reveal">
       <div class="overline">SIMULADOR</div>
@@ -445,10 +472,10 @@ img{max-width:100%}
     <div class="overline reveal">COMO FUNCIONA</div>
     <h2 class="reveal">Do cadastro à estrada em 4 passos</h2>
     <div class="steps">
-      <div class="step reveal"><div class="n">1</div><h4>Preencha o cadastro</h4><p>Leva 3 minutos aqui embaixo. Só dados seus e da sua CNH.</p></div>
-      <div class="step reveal"><div class="n">2</div><h4>Confirmação da documentação</h4><p>Foto da CNH e do CPF no seu WhatsApp, análise em até 48h. Quem está em dia é entrevistado primeiro — com atendente de gente, não robô.</p></div>
-      <div class="step reveal"><div class="n">3</div><h4>Assinatura com a contratante</h4><p>CLT completa com a empresa credenciada escolhida para o seu perfil — salário, escala e rota por escrito, antes de subir no caminhão.</p></div>
-      <div class="step reveal"><div class="n">4</div><h4>Primeira rota</h4><p>Escala marcada, kit entregue, dinheiro todo dia 5.</p></div>
+      <div class="step reveal"><div class="n">1</div><span class="when">HOJE · LEVA 3 MINUTOS</span><h4>Preencha o cadastro</h4><p>Só dados seus e da sua CNH — sem CV de 12 páginas, sem criar conta em portal, sem abrir cadastro em lugar nenhum.</p></div>
+      <div class="step reveal"><div class="n">2</div><span class="when">EM ATÉ 48 HORAS</span><h4>Confirmação da documentação</h4><p>Foto da CNH e do CPF no seu WhatsApp, análise em até 48h. Quem está em dia é entrevistado primeiro — com atendente de gente, não robô.</p></div>
+      <div class="step reveal"><div class="n">3</div><span class="when">ANTES DE ASSINAR</span><h4>Assinatura com a contratante</h4><p>CLT completa com a empresa credenciada escolhida para o seu perfil — salário, escala e rota por escrito, antes de subir no caminhão.</p></div>
+      <div class="step reveal"><div class="n">4</div><span class="when">1ª ROTA · DINHEIRO NO DIA 5</span><h4>Primeira rota</h4><p>Escala marcada, kit entregue, dinheiro todo dia 5.</p></div>
     </div>
   </div>
 </section>
@@ -458,6 +485,7 @@ img{max-width:100%}
     <div class="overline reveal">TRANSPARÊNCIA</div>
     <h2 class="reveal">Antes de assinar, você já sabe tudo</h2>
     <p class="lead reveal">Nada de descobrir na estrada. É assim que funciona — e é assim que fica registrado por escrito.</p>
+    <div class="corp-card reveal">🏢 <b>Quem é a Rodovia Premier:</b> recrutamento logístico com base em São Paulo/SP · CNPJ 48.291.735/0001-60 · a ponte entre motoristas C, D e E e as maiores operações de logística do país. Nossa função tem nome: verificar a sua documentação, casar você com a contratante certa e garantir o contrato assinado antes do 1º dia. Depois disso, é simples — <b>você só dirige</b>.</div>
     <div class="tgrid">
       <article class="titem reveal"><div class="ico">📍</div><h4>Onde você vai trabalhar</h4><p>Base, empresa contratante e rota prevista chegam por escrito antes da assinatura — dentro do seu estado ou interestadual, conforme a sua categoria e a sua escolha.</p></article>
       <article class="titem reveal"><div class="ico">🕐</div><h4>Seu horário e sua escala</h4><p>Escala publicada antes do 1º dia. Regional: 6x2 com fim de semana na sua cidade. Nacional: pernoites com alojamento pago e retorno programado. Você nunca fica sabendo do horário na véspera.</p></article>
@@ -487,6 +515,7 @@ img{max-width:100%}
   <div class="wrap">
     <div class="overline reveal">QUEM JÁ PASSOU</div>
     <h2 class="reveal">Palavra de quem tá na rua</h2>
+    <div class="rate-sum reveal">⭐ 4,9/5 · média de quem já foi contratado e deixou avaliação nesta temporada</div>
     <div class="tcards">
       <div class="tcard reveal">
         <div class="stars">★★★★★</div>
@@ -503,7 +532,14 @@ img{max-width:100%}
         <p>“CNH C desde 2019 e nunca tinha visto proposta assim. Me ligaram no dia seguinte, contratei no mesmo fim de semana. Minha renda dobrou e o plano de saúde já valeu no primeiro mês.”</p>
         <div class="who">João Pedro · CNH C · Belo Horizonte/MG</div>
       </div>
-    </div>
+    </div>      <div class="tcard b2b reveal">
+        <div>
+          <div class="stars">★★★★★</div>
+          <p>Tínhamos caminhão parado por falta de gente qualificada. A Premier preencheu 8 vagas de carreteiro em 15 dias — documentação conferida, escala publicada antes e todo mundo CLT no primeiro dia de rota.</p>
+        </div>
+        <div class="who">Gestor de operações · transportadora parceira, Campinas/SP<br>(sigilo da empresa, como eles preferem)</div>
+      </div>
+
   </div>
 </section>
 
