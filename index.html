@@ -19,6 +19,7 @@
 <meta name="twitter:description" content="Contrato CLT antes do 1º dia. Zero taxa. Cadastro em 3 minutos.">
 <meta name="twitter:image" content="https://vagarodovia-hub.github.io/vagas/og.jpg">
 <meta name="theme-color" content="#0a0e15">
+<link rel="canonical" href="https://vagarodovia-hub.github.io/vagas/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1421'/%3E%3Cpath d='M19 17 L32 47 L45 17' fill='none' stroke='%23f5b841' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,6 +179,56 @@ img{max-width:100%}
 .cat small{font-size:.86rem;font-weight:600;color:#dfe6f2;letter-spacing:.02em}
 @media(max-width:560px){.cat{padding:7px 14px 7px 7px}.cat small{font-size:.78rem}}
 
+
+/* painel de vagas */
+.ovl-row{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.live-pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(58,213,137,.45);background:rgba(58,213,137,.08);color:#bfeeda;font-size:.8rem;font-weight:700;padding:7px 14px;border-radius:999px;white-space:nowrap}
+.live-pill i{width:9px;height:9px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite;flex:none}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+@media(max-width:900px){.vgrid{grid-template-columns:1fr}}
+.vcard{position:relative;background:linear-gradient(180deg,#141d2e,#101827);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:12px;transition:border-color .3s,box-shadow .3s}
+.vcard.feat{border-color:rgba(245,184,65,.55);box-shadow:0 24px 60px -24px rgba(245,184,65,.35)}
+.vcard.flash{border-color:rgba(58,213,137,.7)!important;box-shadow:0 0 0 3px rgba(58,213,137,.2)}
+.vcard .tag{position:absolute;top:-12px;right:18px;background:linear-gradient(92deg,#ffd97a,#f5b841);color:#241505;font-size:.72rem;font-weight:800;letter-spacing:.08em;padding:5px 12px;border-radius:999px}
+.vc-top{display:flex;align-items:center;gap:14px}
+.vn-num b{font-size:1.9rem;font-weight:800;color:var(--gold2);font-variant-numeric:tabular-nums}
+.vn-num span{display:block;color:#dfe6f2;font-weight:600;font-size:.9rem}
+.vc-route{color:#fff;font-weight:700}
+.vc-sal{color:var(--mut);font-size:.9rem}
+.vc-reg{display:flex;flex-wrap:wrap;gap:8px}
+.vc-reg span{border:1px solid var(--line);background:rgba(255,255,255,.04);color:#c7d2e2;font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.05em}
+.vc-cta{margin-top:auto;color:var(--gold2);font-weight:700;text-decoration:none;border-bottom:1px dashed rgba(245,184,65,.5);padding-bottom:2px}
+.vc-cta:hover{color:#fff}
+/* simulador */
+.calc{margin-top:36px;background:linear-gradient(180deg,#141d2e,#101827);border:1px solid rgba(245,184,65,.35);border-radius:18px;padding:30px}
+.calc .overline{margin-bottom:8px}
+.calc h3{font-size:clamp(1.35rem,3vw,1.5rem);color:#fff}
+.calc-head,.calc>p{color:var(--mut)}
+.calc>p{margin-top:8px;max-width:680px;font-size:.98rem}
+.calc-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+@media(max-width:900px){.calc-cols{grid-template-columns:1fr}}
+.calc label{display:block;font-size:.85rem;font-weight:600;color:#cdd7e6;margin-bottom:6px}
+.calc select{width:100%;background:#0b111c;border:1px solid var(--line);border-radius:10px;color:#fff;padding:13px 14px;font-size:.95rem;font-family:inherit;outline:none}
+.calc select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(245,184,65,.18)}
+.calc-out{margin-top:24px;background:#0b111c;border:1px dashed rgba(245,184,65,.45);border-radius:14px;padding:24px}
+.calc-out small{color:var(--mut);letter-spacing:.12em;font-size:.75rem;display:block;margin-bottom:10px}
+.calc-out b{font-size:clamp(1.5rem,4vw,2.1rem);color:var(--gold2);font-weight:800;font-variant-numeric:tabular-nums}
+.calc-out ul{list-style:none;margin:16px 0 0;display:grid;gap:8px}
+.calc-out li{font-size:.9rem;color:#c7d2e2}
+.calc-out li::before{content:"✓ ";color:var(--gold);font-weight:800}
+/* transparencia */
+.tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px}
+@media(max-width:1000px){.tgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.tgrid{grid-template-columns:1fr}}
+.titem{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.titem .ico{font-size:1.5rem}
+.titem h4{margin:10px 0 6px;font-size:1rem;color:#fff}
+.titem p{color:var(--mut);font-size:.88rem}
+/* compartilhar + atendente */
+.share-link{display:inline-block;margin-top:20px;color:var(--gold2);font-weight:600;text-decoration:none;border-bottom:1px dashed rgba(245,184,65,.5)}
+.share-link:hover{color:#fff}
+.float-wpp::after{content:"";position:absolute;top:1px;right:1px;width:15px;height:15px;border-radius:50%;background:var(--green);border:2.5px solid #0a0e15;animation:pulse 1.6s infinite}
+
 </style>
 </head>
 <body>
@@ -186,7 +237,7 @@ img{max-width:100%}
 <header class="nav" id="top">
   <div class="wrap nav-in">
     <a class="brand" href="#top"><svg viewBox="0 0 40 40" fill="none"><rect x="2" y="2" width="36" height="36" rx="9" fill="url(#gb)"/><path d="M14 32 L18.5 10 h3 L26 32" stroke="#241505" stroke-width="3" stroke-linecap="round"/><path d="M20 15v2M20 21v3M20 28v2" stroke="#241505" stroke-width="2.4" stroke-linecap="round"/><defs><linearGradient id="gb" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#ffd97a"/><stop offset="1" stop-color="#e8942a"/></linearGradient></defs></svg><span>VAGA<b>RODOVIA</b></span></a>
-    <nav><a href="#salarios">Salários</a><a href="#empresas">Empresas</a><a href="#beneficios">Benefícios</a><a href="#garantias">Garantias</a><a href="#faq">Dúvidas</a></nav>
+    <nav><a href="#painel">Vagas hoje</a><a href="#salarios">Salários</a><a href="#empresas">Empresas</a><a href="#beneficios">Benefícios</a><a href="#garantias">Garantias</a><a href="#faq">Dúvidas</a></nav>
     <a href="#cadastro" class="btn btn-gold sm">Garantir vaga</a>
   </div>
 </header>
@@ -203,6 +254,7 @@ img{max-width:100%}
     <p class="sub">Vagas reais de motorista, contrato CLT assinado <b>antes</b> do primeiro dia de estrada. Sem taxa, sem furada, sem letra miúda.</p>
     <div class="cta-row">
       <a class="btn btn-gold lg" href="#cadastro">GARANTIR MINHA VAGA AGORA →</a>
+      <a class="btn btn-ghost lg" href="#painel">VER PAINEL DE VAGAS</a>
     </div>
     <div class="count-wrap">CADASTROS FECHAM EM <span class="cd" id="cd">--:--:--</span></div>
     <ul class="chips">
@@ -213,6 +265,41 @@ img{max-width:100%}
     <li>📄 Documentação em dia = prioridade de chamada</li>
     </ul>
     <div class="ticker" id="ticker"></div>
+  </div>
+</section>
+
+<section id="painel" class="sec" style="padding-top:56px;padding-bottom:60px">
+  <div class="wrap">
+    <div class="ovl-row reveal">
+      <div><div class="overline">PAINEL DE VAGAS · AO VIVO</div><h2>O que está aberto nesta seleção</h2></div>
+      <span class="live-pill"><i></i>atualizado agora</span>
+    </div>
+    <p class="lead reveal">Sem mistério: estas são as frentes de contratação da rodada. Os números caem à medida que cadastros com documentação completa entram na escala de chamada.</p>
+    <div class="vgrid">
+      <article class="vcard reveal" data-vn="12">
+        <div class="vc-top"><span class="cnh-badge">C</span><span class="vn-num"><b class="vn">12</b> vagas abertas</span></div>
+        <p class="vc-route">Caminhão baú · carga seca</p>
+        <p class="vc-sal">R$ 7.800 – R$ 9.500/mês + diárias</p>
+        <div class="vc-reg"><span>SP</span><span>MG</span><span>GO</span><span>PR</span></div>
+        <a class="vc-cta" href="#cadastro">Quero essa vaga →</a>
+      </article>
+      <article class="vcard reveal" data-vn="11">
+        <div class="vc-top"><span class="cnh-badge">D</span><span class="vn-num"><b class="vn">11</b> vagas abertas</span></div>
+        <p class="vc-route">Ônibus · fretamento · intermédio</p>
+        <p class="vc-sal">R$ 9.200 – R$ 12.300/mês + diárias</p>
+        <div class="vc-reg"><span>SP</span><span>MG</span><span>PR</span><span>RS</span></div>
+        <a class="vc-cta" href="#cadastro">Quero essa vaga →</a>
+      </article>
+      <article class="vcard feat reveal" data-vn="14">
+        <span class="tag">MAIS REMUNERADA</span>
+        <div class="vc-top"><span class="cnh-badge">E</span><span class="vn-num"><b class="vn">14</b> vagas abertas</span></div>
+        <p class="vc-route">Carreta · bitrem · intermodal</p>
+        <p class="vc-sal">R$ 10.900 – R$ 14.800/mês + diárias</p>
+        <div class="vc-reg"><span>SP</span><span>PR</span><span>SC</span><span>RS</span></div>
+        <a class="vc-cta" href="#cadastro">Quero essa vaga →</a>
+      </article>
+    </div>
+    <p class="fine reveal" style="margin-top:22px">Total da rodada: <b id="painel-total">37</b> vagas · chamada diária · prioridade para quem chega com documentação completa.</p>
   </div>
 </section>
 
@@ -253,6 +340,43 @@ img{max-width:100%}
           <li>Escala com fim de semana em casa</li>
         </ul>
       </article>
+    </div>
+<div class="calc reveal">
+      <div class="overline">SIMULADOR</div>
+      <h3>Descubra a sua faixa exata</h3>
+      <p>Responda três coisas. A estimativa usa os mesmos números dos cartões acima — o que muda é o seu tempo de estrada e o tipo de rota que você escolhe.</p>
+      <div class="calc-cols">
+        <label>Categoria da CNH
+          <select id="calc-cnh">
+            <option value="" disabled selected>Selecione</option>
+            <option value="C">CNH C — caminhão / carga seca</option>
+            <option value="D">CNH D — ônibus / intermédio</option>
+            <option value="E">CNH E — carreta / bitrem</option>
+          </select>
+        </label>
+        <label>Tempo na categoria
+          <select id="calc-tempo">
+            <option value="" disabled selected>Selecione</option>
+            <option value="Menos de 1 ano">Menos de 1 ano</option>
+            <option value="1 a 3 anos">1 a 3 anos</option>
+            <option value="3 a 5 anos">3 a 5 anos</option>
+            <option value="Mais de 5 anos">Mais de 5 anos</option>
+          </select>
+        </label>
+        <label>Escolha de rota
+          <select id="calc-rota">
+            <option value="regional">Regional — fim de semana em casa</option>
+            <option value="nacional">Nacional — diária e alojamento pago</option>
+          </select>
+        </label>
+      </div>
+      <div class="calc-out" id="calc-out" hidden>
+        <small>SUA FAIXA ESTIMADA · POR MÊS</small>
+        <b><span id="calc-min"></span> → <span id="calc-max"></span></b>
+        <ul id="calc-extra"></ul>
+        <p class="fine">Estimativa da seleção 2026. O valor final fica no contrato, escrito, antes do primeiro dia de estrada.</p>
+        <button class="btn btn-gold lg full" id="calc-apply" type="button" style="margin-top:14px">CADASTRAR NA MINHA FAIXA →</button>
+      </div>
     </div>
   </div>
 </section>
@@ -329,6 +453,20 @@ img{max-width:100%}
   </div>
 </section>
 
+<section id="transparencia" class="sec">
+  <div class="wrap">
+    <div class="overline reveal">TRANSPARÊNCIA</div>
+    <h2 class="reveal">Antes de assinar, você já sabe tudo</h2>
+    <p class="lead reveal">Nada de descobrir na estrada. É assim que funciona — e é assim que fica registrado por escrito.</p>
+    <div class="tgrid">
+      <article class="titem reveal"><div class="ico">📍</div><h4>Onde você vai trabalhar</h4><p>Base, empresa contratante e rota prevista chegam por escrito antes da assinatura — dentro do seu estado ou interestadual, conforme a sua categoria e a sua escolha.</p></article>
+      <article class="titem reveal"><div class="ico">🕐</div><h4>Seu horário e sua escala</h4><p>Escala publicada antes do 1º dia. Regional: 6x2 com fim de semana na sua cidade. Nacional: pernoites com alojamento pago e retorno programado. Você nunca fica sabendo do horário na véspera.</p></article>
+      <article class="titem reveal"><div class="ico">💵</div><h4>O que o seu dinheiro inclui</h4><p>Salário CLT todo dia 5, 13º e férias garantidos em contrato, diária em trânsito de R$ 90/dia, vale-alimentação de R$ 1.200/mês, plano de saúde desde o 1º dia e seguro de vida.</p></article>
+      <article class="titem reveal"><div class="ico">🧾</div><h4>O que não sai do seu bolso</h4><p>Taxa de cadastro: zero. Kit de uniforme: entregue no 1º dia. Combustível, manutenção e documentação da frota: por conta da contratante. Seus documentos: só foto — o original só passa de mão na assinatura.</p></article>
+    </div>
+  </div>
+</section>
+
 <section id="garantias" class="sec alt">
   <div class="wrap">
     <div class="overline reveal">GARANTIAS</div>
@@ -393,6 +531,7 @@ img{max-width:100%}
     <h2>Sua próxima rota começa num formulário.</h2>
     <p>Leva 3 minutos. Quem hesita fica olhando o retrovisor.</p>
     <a href="#cadastro" class="btn btn-gold lg">QUERO SER CONVIDADO À ENTREVISTA →</a>
+    <a class="share-link" href="https://wa.me/?text=%F0%9F%9A%9B%20VAGA%20DE%20MOTORISTA%20%E2%80%94%20CNH%20C%2C%20D%20ou%20E.%20At%C3%A9%20R%24%2014.800%2Fm%C3%AAs%2C%20CLT%20assinada%20antes%20do%201%C2%BA%20dia%20e%20zero%20taxa.%20Cadastro%20leva%203%20minutos%3A%20https%3A%2F%2Fvagarodovia-hub.github.io%2Fvagas%2F" target="_blank" rel="noopener">📲 Ou manda esse link pros grupos dos seus colegas de estrada</a>
   </div>
 </section>
 
@@ -483,7 +622,7 @@ img{max-width:100%}
   </div>
 </footer>
 
-<a class="float-wpp" href="https://wa.me/556282885665?text=Ol%C3%A1!%20Quero%20uma%20vaga%20de%20motorista." aria-label="WhatsApp">💬</a>
+<a class="float-wpp" href="https://wa.me/556282885665?text=Ol%C3%A1!%20Quero%20uma%20vaga%20de%20motorista." aria-label="Falar com Renata (RH) no WhatsApp — atendimento online agora" title="Renata (RH) · online agora">💬</a>
 <div class="stickybar"><span>💰 Até R$ 14.800/mês · CNH C·D·E</span><a href="#cadastro">GARANTIR VAGA</a></div>
 
 <script>
@@ -508,7 +647,9 @@ document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
   function alvo(){return window.__vrNum||DEFAULT;}
   function bindLinks(){
     document.querySelectorAll('a[href*="wa.me"]').forEach(function(a){
-      var u=a.getAttribute("href")||"";var t=u.match(/[?&]text=([^&]*)/);
+      var u=a.getAttribute("href")||"";
+      if(u.indexOf("https://wa.me/?")===0){return;}
+      var t=u.match(/[?&]text=([^&]*)/);
       a.setAttribute("href","https://wa.me/"+alvo()+(t?"?text="+t[1]:""));
     });
   }
@@ -535,6 +676,62 @@ document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
     setTimeout(function(){location.href="obrigado.html";},700);
   });}
   if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",bindLinks);}else{bindLinks();}
+})();
+</script>
+<script>
+/* painel ao vivo: contadores */
+(function(){
+  var cards=Array.prototype.slice.call(document.querySelectorAll(".vcard[data-vn]"));
+  var tot=document.getElementById("painel-total");if(!cards.length||!tot)return;
+  function atualiza(){tot.textContent=cards.reduce(function(a,c){return a+parseInt(c.getAttribute("data-vn"),10)},0);}
+  setInterval(function(){
+    var dispo=cards.filter(function(c){return parseInt(c.getAttribute("data-vn"),10)>4});
+    if(!dispo.length||Math.random()>.5)return;
+    var k=dispo[Math.floor(Math.random()*dispo.length)];
+    k.setAttribute("data-vn",String(parseInt(k.getAttribute("data-vn"),10)-1));
+    k.querySelector(".vn").textContent=k.getAttribute("data-vn");
+    k.classList.add("flash");setTimeout(function(){k.classList.remove("flash")},1200);
+    atualiza();
+  },40000);
+  atualiza();
+})();
+/* contagem regressiva: estado apos o prazo */
+(function(){
+  var cd=document.getElementById("cd");if(!cd)return;
+  setInterval(function(){if(target-Date.now()<=0){cd.textContent="SELEÇÃO EM ANDAMENTO";}},1000);
+})();
+/* simulador de salario */
+(function(){
+  var B={C:[7800,9500],D:[9200,12300],E:[10900,14800]};
+  var P={"Menos de 1 ano":.22,"1 a 3 anos":.5,"3 a 5 anos":.75,"Mais de 5 anos":1};
+  var el=function(id){return document.getElementById(id)};
+  var out=el("calc-out");if(!out)return;
+  function moeda(n){return n.toLocaleString("pt-BR")}
+  function render(){
+    var cnh=el("calc-cnh").value,tp=el("calc-tempo").value,rota=el("calc-rota").value;
+    if(!cnh||!tp){out.hidden=true;return}
+    var lo=B[cnh][0],hi=B[cnh][1],c=lo+(hi-lo)*P[tp],w=(hi-lo)*.18;
+    var mn=Math.max(lo,c-w),mx=Math.min(hi,c+w),extra=[];
+    if(rota==="nacional"){mn+=1600;mx+=1600;extra.push("+ R$ 1.600/mês em diárias em trânsito (18 dias × R$ 90)","Alojamento pago em pernoites fora da base");}
+    else{extra.push("Escala regional com fim de semana na sua cidade","Retorno programado por escrito, sem surpresa");}
+    extra.push("Plano de saúde desde o 1º dia · VA R$ 1.200 · 13º e férias em contrato");
+    out.hidden=false;
+    el("calc-min").textContent="R$ "+moeda(Math.round(mn/100)*100);
+    el("calc-max").textContent="R$ "+moeda(Math.round(mx/100)*100);
+    var ul=el("calc-extra");ul.innerHTML="";
+    extra.forEach(function(t){var li=document.createElement("li");li.textContent=t;ul.appendChild(li);});
+  }
+  ["calc-cnh","calc-tempo","calc-rota"].forEach(function(id){el(id).addEventListener("change",render)});
+  el("calc-apply").addEventListener("click",function(){
+    var cnh=el("calc-cnh").value,tp=el("calc-tempo").value;
+    var f=document.querySelector('form[name="cadastro-motorista"]');
+    if(f){
+      var CAT={C:"CNH C — caminhão / carga seca",D:"CNH D — ônibus / intermédio",E:"CNH E — carreta / bitrem"};
+      f.querySelector('[name="categoria"]').value=CAT[cnh];
+      f.querySelector('[name="tempo"]').value=tp;
+    }
+    document.getElementById("cadastro").scrollIntoView({behavior:"smooth"});
+  });
 })();
 </script>
 </body>
