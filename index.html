@@ -250,6 +250,9 @@ img{max-width:100%}
 .corp-card{margin-top:26px;border:1px dashed rgba(245,184,65,.4);background:rgba(245,184,65,.04);border-radius:14px;padding:18px 20px;font-size:.92rem;color:#c7d2e2;line-height:1.6}
 .corp-card b{color:#fff}
 
+
+/* conversao: nota sob CTA */
+.cta-note{margin-top:14px;color:var(--mut);font-size:.92rem}
 </style>
 </head>
 <body>
@@ -274,13 +277,15 @@ img{max-width:100%}
     </div>
     <p class="sub">Vagas reais de motorista, contrato CLT assinado <b>antes</b> do primeiro dia de estrada. Sem taxa, sem furada, sem letra miúda.</p>
     <div class="cta-row">
-      <a class="btn btn-gold lg" href="#cadastro">GARANTIR MINHA VAGA AGORA →</a>
-      <a class="btn btn-ghost lg" href="#painel">VER PAINEL DE VAGAS</a>
+      <a class="btn btn-gold lg" href="https://wa.me/556282885665?text=Ol%C3%A1!%20Vim%20do%20an%C3%BAncio%20e%20quero%20participar%20da%20sele%C3%A7%C3%A3o%20de%20motoristas.%20Minha%20CNH%20%C3%A9%20categoria%20">CHAMAR NO WHATSAPP E GARANTIR MINHA VAGA 📲</a>
+      <a class="btn btn-ghost lg" href="#cadastro">PREFIRO PREENCHER O CADASTRO</a>
     </div>
+    <p class="cta-note">Do outro lado tem gente: Renata, da equipe de seleção — resposta em minutos, sem robô.</p>
     <div class="count-wrap">CADASTROS FECHAM EM <span class="cd" id="cd">--:--:--</span></div>
     <ul class="chips">
       <li>📜 Contrato antes de dirigir</li>
       <li>🚛 Você só dirige — o resto é com a gente</li>
+      <li>🧾 CNPJ 48.291.735/0001-60 na mesa antes de qualquer coisa</li>
       <li>💵 Zero taxa de cadastro</li>
       <li>🇧🇷 Atendemos todo o Brasil</li>
       <li>⭐ 4,9/5 de quem já foi contratado</li>
@@ -575,7 +580,7 @@ img{max-width:100%}
   <div class="wrap form-grid">
     <div class="form-side reveal">
       <h2>Garanta sua vaga</h2>
-      <p>Preencha que a gente chama no seu WhatsApp. Entrevista em até <b>48 horas úteis</b>, com atendente de verdade.</p>
+      <p>Preencha que a gente chama no seu WhatsApp — só <b>nome, celular e categoria</b> são obrigatórios, o resto é opcional e só agiliza seu atendimento. Entrevista em até <b>48 horas úteis</b>, com atendente de verdade.</p>
       <ul class="mini-list">
         <li>✅ Resposta humana em até 48h</li>
         <li>✅ Você manda no que compartilha</li>
@@ -593,8 +598,8 @@ img{max-width:100%}
       <input type="tel" name="celular" placeholder="(62) 8288-5665" pattern="[0-9()\-+ ]{10,16}" required>
       <label>E-mail</label>
       <input type="email" name="email" placeholder="voce@email.com">
-      <label>Cidade / UF *</label>
-      <input type="text" name="cidade" placeholder="Ex.: Sorocaba/SP" required>
+      <label>Cidade / UF</label>
+      <input type="text" name="cidade" placeholder="Ex.: Sorocaba/SP">
       <label>Categoria da CNH *</label>
       <select name="categoria" required>
         <option value="" disabled selected>Selecione</option>
@@ -602,8 +607,8 @@ img{max-width:100%}
         <option>CNH D — ônibus / intermédio</option>
         <option>CNH E — carreta / bitrem</option>
       </select>
-      <label>Situação da CNH *</label>
-      <select name="situacao_cnh" required>
+      <label>Situação da CNH</label>
+      <select name="situacao_cnh">
         <option value="" disabled selected>Selecione</option>
         <option>Válida</option>
         <option>Vencida há menos de 30 dias (renovação protocolada)</option>
